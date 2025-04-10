@@ -10,6 +10,10 @@ namespace Onion.Application.Extensions
             services.AddAutoMapper(typeof(ServiceRegistrations).Assembly);
 
             services.AddScoped<GetCategoryQueryHandler>();
+            services.AddScoped<GetCategoryByIdQueryHandler>();
+            services.AddScoped<CreateCategoryCommandHandler>();
+            services.AddScoped<UpdateCategoryCommandHandler>();
+            services.AddScoped<RemoveCategoryCommandHandler>();
         }
     }
 }
