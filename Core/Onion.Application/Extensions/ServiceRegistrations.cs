@@ -8,6 +8,10 @@ namespace Onion.Application.Extensions
         public static void AddApplicationExt(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(ServiceRegistrations).Assembly);
+            services.AddMediatR(config =>
+            {
+                config.RegisterServicesFromAssembly(typeof(ServiceRegistrations).Assembly);
+            });
 
             services.AddScoped<GetCategoryQueryHandler>();
             services.AddScoped<GetCategoryByIdQueryHandler>();
